@@ -1,0 +1,227 @@
+<!-- 
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPTCHA PREDICTER</title>
+    <style>
+        /* Global Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: transparent; /* Transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff; /* White text color */
+            overflow: hidden; /* Prevent white space around */
+        }
+
+        /* Violet section with rounded corners */
+        .rounded-section {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Gradient background */
+            border-radius: 20px; /* Rounded corners */
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow to pop the container */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        button {
+            width: 100%;
+            max-width: 300px;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hover and Active States */
+        button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-4px);
+        }
+
+        button:active {
+            background-color: #004494;
+            transform: translateY(0);
+        }
+
+        /* Button animation on hover */
+        button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: #fff;
+            transition: all 0.5s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        button:active::before {
+            width: 0;
+            height: 0;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="rounded-section">
+        <h1>CAPTCHA Solver</h1>
+        <button id="extract-captcha">Solve CAPTCHA</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPTCHA Solver</title>
+
+    <!-- Google Fonts Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000; /* Black background */
+        }
+
+        /* Popup Wrapper */
+        .popup-wrapper {
+            width: 300px;
+            height: 350px;
+            position: relative;
+            background-color: #000; /* Ensure black background */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Video Styling */
+        .video-container {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-container video {
+            max-width: 100%; /* Center and scale video */
+            max-height: 70%;
+            border-radius: 5px;
+        }
+
+        /* Close Icon Styling */
+        .close-icon {
+            width: 20px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        .close-icon:hover {
+            opacity: 0.7;
+        }
+
+        /* Solve Button */
+        .solve-button {
+            width: 60%;
+            background-color: #000000; /* Black background */
+            border: 0.7px solid #f1f0ec; /* White border */
+            color: #ffffff; /* Pure white text */
+            font-size: 0.7rem; /* Smaller font size */
+            font-weight: lighter; /* Adjust font weight */
+            border-radius: 10px; /* Rounded corners */
+            padding: 10px 0; /* Vertical padding */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-bottom: 50px; /* Adjusted bottom margin */
+            text-align: center; /* Ensures bottom adjustments apply */
+            transition: transform 0.3s ease;
+        }
+        .solve-button  button{
+            background-color: transparent;
+            border: 0;
+            color: #f1f0ec;
+            cursor: pointer; 
+
+        }
+        .solve-button:active{
+              transform: scale(0.95);
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Popup Wrapper -->
+    <div class="popup-wrapper">
+        <!-- Close Icon -->
+     
+
+        <!-- Video Container -->
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="images/captcha05.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Solve Button -->
+        <div class="solve-button" id="extract-captcha">
+        <button >Solve</button>
+        </div>
+        <script src="popup.js"></script>
+    </div>
+
+   
+</body>
+</html>

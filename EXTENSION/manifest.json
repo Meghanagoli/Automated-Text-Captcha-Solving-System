@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "CAPTCHA SOLVER",
+  "version": "1.0",
+  "permissions": [
+    "downloads",
+    "activeTab",
+    "notifications"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:5001/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "48": "icon.png"
+  },
+  "web_accessible_resources": [
+    {
+        "resources": ["assets/audio.mp3"],
+        "matches": ["<all_urls>"]
+    }
+]
+
+}
